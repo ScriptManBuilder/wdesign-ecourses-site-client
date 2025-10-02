@@ -83,39 +83,6 @@ const Home: React.FC = () => {
 
   // Состояние для автоматического выделения карточек продуктов
   const [activeProductCard, setActiveProductCard] = useState(0);
-
-  // Force video loading on production
-  useEffect(() => {
-    console.log('🔧 Force loading videos on production...');
-    
-    const forceLoadVideo = (selector: string) => {
-      const video = document.querySelector(selector) as HTMLVideoElement;
-      if (video) {
-        console.log(`🎯 Found video: ${selector}`);
-        console.log(`📍 Video src: ${video.src || video.currentSrc}`);
-        console.log(`📊 Video readyState: ${video.readyState}`);
-        console.log(`🔄 Video networkState: ${video.networkState}`);
-        
-        if (video.readyState < 3) { // HAVE_FUTURE_DATA
-          console.log(`🚀 Force loading: ${selector}`);
-          video.load();
-          
-          // Try to play after a short delay
-          setTimeout(() => {
-            video.play().catch(e => console.log(`ℹ️ Auto-play prevented for ${selector}:`, e));
-          }, 1000);
-        }
-      } else {
-        console.log(`❌ Video not found: ${selector}`);
-      }
-    };
-    
-    // Wait for DOM to be ready
-    setTimeout(() => {
-      forceLoadVideo('video[src*="videoAI_3_1"]');
-      forceLoadVideo('video[src*="videoAI_2"]');
-    }, 2000);
-  }, []);
   const totalProductCards = featuredProducts.length;
 
   // Данные для слайдов карусели
@@ -164,7 +131,7 @@ const Home: React.FC = () => {
       { src: `/images/img_8.jpg`, alt: `Web Design Learning Ribbon 8`, type: 'design-ribbon' }
     ];
     
-    // Перемешиваем для разнообразия и добавляем id
+    // Перемешиваем для разнообразия и добавляем id1
     return allImages
       .sort(() => Math.random() - 0.5)
       .map((img, index) => ({
@@ -379,16 +346,8 @@ const Home: React.FC = () => {
           loop 
           playsInline
           preload="auto"
-          onLoadStart={() => console.log('🎬 Hero video loading started')}
-          onCanPlay={() => console.log('✅ Hero video can play')}
-          onError={(e) => {
-            console.error('❌ Hero video error:', e);
-            console.error('❌ Video src:', e.currentTarget.src);
-            console.error('❌ Error details:', e.currentTarget.error);
-          }}
-          onLoadedData={() => console.log('📊 Hero video data loaded')}
         >
-                    <source src="https://www.design-ecourses.com/videos/videoAI_3_1.mp4" type="video/mp4" />
+          <source src="/videos/videoAI_3_1.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </HeroVideo>
         <Container>
@@ -515,17 +474,9 @@ const Home: React.FC = () => {
             muted 
             loop 
             playsInline
-            preload="auto"
-            onLoadStart={() => console.log('🎬 Section video loading started')}
-            onCanPlay={() => console.log('✅ Section video can play')}
-            onError={(e) => {
-              console.error('❌ Section video error:', e);
-              console.error('❌ Video src:', e.currentTarget.src);
-              console.error('❌ Error details:', e.currentTarget.error);
-            }}
-            onLoadedData={() => console.log('📊 Section video data loaded')}
+            preload="none"
           >
-            <source src="https://www.design-ecourses.com/videos/videoAI_2.mp4" type="video/mp4" />
+            <source src="/videos/videoAI_2.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </VideoSectionVideo>
         )}
