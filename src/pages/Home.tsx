@@ -63,6 +63,16 @@ import {
   InfoHighlight
 } from '../styles/pages/HomeStyles';
 
+// Helper function for video paths
+const getVideoPath = (filename: string): string => {
+  // For production, try multiple sources
+  if (process.env.NODE_ENV === 'production') {
+    return `/videos/${filename}`;
+  }
+  // For development
+  return `/videos/${filename}`;
+};
+
 const Home: React.FC = () => {
   const featuredProducts = products.slice(0, 6);
   const { formatPrice } = usePrice();
@@ -347,7 +357,7 @@ const Home: React.FC = () => {
           playsInline
           preload="auto"
         >
-          <source src="/videos/videoAI_3_1.mp4" type="video/mp4" />
+          <source src={getVideoPath('videoAI_3_1.mp4')} type="video/mp4" />
           Your browser does not support the video tag.
         </HeroVideo>
         <Container>
@@ -476,7 +486,7 @@ const Home: React.FC = () => {
             playsInline
             preload="none"
           >
-            <source src="/videos/videoAI_2.mp4" type="video/mp4" />
+                        <source src={getVideoPath('videoAI_2.mp4')} type="video/mp4" />
             Your browser does not support the video tag.
           </VideoSectionVideo>
         )}

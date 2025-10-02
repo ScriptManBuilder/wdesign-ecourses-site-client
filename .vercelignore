@@ -1,0 +1,3 @@
+# Force include videos in deployment
+!public/videos/videoAI_2.mp4
+!public/videos/videoAI_3_1.mp4
