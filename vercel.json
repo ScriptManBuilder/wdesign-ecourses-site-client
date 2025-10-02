@@ -1,9 +1,4 @@
 {
-  "functions": {
-    "public/**": {
-      "maxDuration": 30
-    }
-  },
   "headers": [
     {
       "source": "/videos/(.*)",
