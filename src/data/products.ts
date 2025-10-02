@@ -19,30 +19,10 @@ export interface Product {
   inStock: boolean;
 }
 
-// Improved video path generation with fallback
-const getVideoPath = (filename: string): string => {
-  const publicUrl = process.env.PUBLIC_URL || 'https://www.design-ecourses.com';
-  const videoPath = `/videos/${filename}`;
-  const fullPath = `${publicUrl}${videoPath}`;
-  
-  // Debug logging
-  if (process.env.REACT_APP_DEBUG_VIDEOS === 'true' || process.env.NODE_ENV === 'development') {
-    console.log('🎬 Video Debug Info:');
-    console.log('- Filename:', filename);
-    console.log('- PUBLIC_URL:', process.env.PUBLIC_URL);
-    console.log('- Fallback URL: https://www.design-ecourses.com');
-    console.log('- Final path:', fullPath);
-    console.log('- Environment:', process.env.NODE_ENV);
-  }
-  
-  return fullPath;
-};
-
 // Helper function to get course image with fallback
 export const getProductImage = (productId: number, imageIndex: number = 1): string => {
-  const baseUrl = process.env.PUBLIC_URL || 'https://www.design-ecourses.com';
   // Используем img_8.jpg для всех курсов
-  return `${baseUrl}/images/img_8.jpg`;
+  return `/images/img_8.jpg`;
 };
 
 // Helper function to get all available images for a course
@@ -53,43 +33,101 @@ export const getProductImages = (productId: number): string[] => {
 
 // Helper function to get course video preview
 export const getProductVideo = (productId: number): string | undefined => {
-  if (productId >= 1 && productId <= 30) {
-    const filename = `Web Design with WordPress Everything from Beginning to End Derri (${productId}).mp4`;
-    return getVideoPath(filename);
+  // Debug информация
+  if (process.env.REACT_APP_DEBUG_VIDEOS === 'true') {
+    console.log('🎬 Getting video for product:', productId);
+    console.log('🔧 Environment:', process.env.NODE_ENV);
+  }
+  
+  if (productId === 1) {
+    return `/videos/Web Design with WordPress Everything from Beginning to End Derri (1).mp4`;
+  }
+  if (productId === 2) {
+    return `/videos/Web Design with WordPress Everything from Beginning to End Derri (2).mp4`;
+  }
+  if (productId === 3) {
+    return `/videos/Web Design with WordPress Everything from Beginning to End Derri (3).mp4`;
+  }
+  if (productId === 4) {
+    return `/videos/Web Design with WordPress Everything from Beginning to End Derri (4).mp4`;
+  }
+  if (productId === 5) {
+    return `/videos/Web Design with WordPress Everything from Beginning to End Derri (5).mp4`;
+  }
+  if (productId === 6) {
+    return `/videos/Web Design with WordPress Everything from Beginning to End Derri (6).mp4`;
+  }
+  if (productId === 7) {
+    return `/videos/Web Design with WordPress Everything from Beginning to End Derri (7).mp4`;
+  }
+  if (productId === 8) {
+    return `/videos/Web Design with WordPress Everything from Beginning to End Derri (8).mp4`;
+  }
+  if (productId === 9) {
+    return `/videos/Web Design with WordPress Everything from Beginning to End Derri (9).mp4`;
+  }
+  if (productId === 10) {
+    return `/videos/Web Design with WordPress Everything from Beginning to End Derri (10).mp4`;
+  }
+  if (productId === 11) {
+    return `/videos/Web Design with WordPress Everything from Beginning to End Derri (11).mp4`;
   }
   return undefined;
 };
 
 // Helper function to get course videos (for premium courses with multiple videos)
 export const getProductVideos = (productId: number): string[] | undefined => {
-  const createVideoPath = (num: number) => 
-    getVideoPath(`Web Design with WordPress Everything from Beginning to End Derri (${num}).mp4`);
-  
   // Courses 5-7: 2 videos each
   if (productId === 5) {
-    return [createVideoPath(12), createVideoPath(17)]; // заменяем 13 на 17, так как 18 удален
+    return [
+      `/videos/Web Design with WordPress Everything from Beginning to End Derri (12).mp4`,
+      `/videos/Web Design with WordPress Everything from Beginning to End Derri (13).mp4`
+    ];
   }
   if (productId === 6) {
-    return [createVideoPath(14), createVideoPath(15)];
+    return [
+      `/videos/Web Design with WordPress Everything from Beginning to End Derri (14).mp4`,
+      `/videos/Web Design with WordPress Everything from Beginning to End Derri (15).mp4`
+    ];
   }
   if (productId === 7) {
-    return [createVideoPath(16), createVideoPath(19)]; // заменяем 17 на 19
+    return [
+      `/videos/Web Design with WordPress Everything from Beginning to End Derri (16).mp4`,
+      `/videos/Web Design with WordPress Everything from Beginning to End Derri (17).mp4`
+    ];
   }
   
   // Courses 8-10: 3 videos each
   if (productId === 8) {
-    return [createVideoPath(20), createVideoPath(21), createVideoPath(22)];
+    return [
+      `/videos/Web Design with WordPress Everything from Beginning to End Derri (19).mp4`,
+      `/videos/Web Design with WordPress Everything from Beginning to End Derri (20).mp4`,
+      `/videos/Web Design with WordPress Everything from Beginning to End Derri (21).mp4`
+    ];
   }
   if (productId === 9) {
-    return [createVideoPath(23), createVideoPath(24), createVideoPath(25)];
+    return [
+      `/videos/Web Design with WordPress Everything from Beginning to End Derri (22).mp4`,
+      `/videos/Web Design with WordPress Everything from Beginning to End Derri (23).mp4`,
+      `/videos/Web Design with WordPress Everything from Beginning to End Derri (24).mp4`
+    ];
   }
   if (productId === 10) {
-    return [createVideoPath(26), createVideoPath(28), createVideoPath(29)]; // пропускаем 27
+    return [
+      `/videos/Web Design with WordPress Everything from Beginning to End Derri (25).mp4`,
+      `/videos/Web Design with WordPress Everything from Beginning to End Derri (26).mp4`,
+      `/videos/Web Design with WordPress Everything from Beginning to End Derri (28).mp4`
+    ];
   }
   
   // Course 11: 4 videos
   if (productId === 11) {
-    return [createVideoPath(30), createVideoPath(1), createVideoPath(2), createVideoPath(3)];
+    return [
+      `/videos/Web Design with WordPress Everything from Beginning to End Derri (29).mp4`,
+      `/videos/Web Design with WordPress Everything from Beginning to End Derri (30).mp4`,
+      `/videos/Web Design with WordPress Everything from Beginning to End Derri (1).mp4`,
+      `/videos/Web Design with WordPress Everything from Beginning to End Derri (2).mp4`
+    ];
   }
   
   return undefined;

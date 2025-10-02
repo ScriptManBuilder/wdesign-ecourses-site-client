@@ -347,15 +347,7 @@ const Home: React.FC = () => {
           playsInline
           preload="auto"
         >
-          <source 
-            src={`${process.env.PUBLIC_URL || 'https://www.design-ecourses.com'}/videos/videoAI_3_1.mp4`} 
-            type="video/mp4" 
-            onError={(e) => {
-              console.error('Video load error:', e.currentTarget.src);
-              console.log('PUBLIC_URL:', process.env.PUBLIC_URL);
-              console.log('NODE_ENV:', process.env.NODE_ENV);
-            }}
-          />
+          <source src="/videos/videoAI_3_1.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </HeroVideo>
         <Container>
@@ -484,14 +476,7 @@ const Home: React.FC = () => {
             playsInline
             preload="none"
           >
-            <source 
-              src={`${process.env.PUBLIC_URL || 'https://www.design-ecourses.com'}/videos/videoAI_2.mp4`} 
-              type="video/mp4" 
-              onError={(e) => {
-                console.error('Video load error:', e.currentTarget.src);
-                console.log('PUBLIC_URL:', process.env.PUBLIC_URL);
-              }}
-            />
+            <source src="/videos/videoAI_2.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </VideoSectionVideo>
         )}
