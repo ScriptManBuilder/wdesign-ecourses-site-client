@@ -448,7 +448,7 @@ const Home: React.FC = () => {
                 <GlobeIcon />
                 <FeatureTitle>Global Community</FeatureTitle>
                 <FeatureDescription>
-                  Join thousands of web design enthusiasts worldwide with 24/7 support and community access.
+                  Join hundreds of web design enthusiasts worldwide with 24/7 support and community access.
                 </FeatureDescription>
               </FeatureCard>
             </ScrollReveal>
@@ -692,7 +692,7 @@ const Home: React.FC = () => {
             <InfoSubsection>
               <InfoSubtitle>24/7 Community Access</InfoSubtitle>
               <InfoText>
-                Connect with <InfoHighlight>thousands of design learners worldwide </InfoHighlight> 
+                Connect with <InfoHighlight>hundreds of design learners worldwide </InfoHighlight> 
                 through our exclusive community platform. Share projects, get feedback, 
                 and collaborate on design solutions.
               </InfoText>
