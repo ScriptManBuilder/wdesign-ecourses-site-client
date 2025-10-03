@@ -2288,7 +2288,7 @@ const About: React.FC = () => {
 
     
 
-      {/* Python Leadership Team Section */}
+      {/* Web Design Leadership Team Section */}
       <LeadershipSection>
         <Container>
           <LeadershipContainer>
@@ -2299,7 +2299,7 @@ const About: React.FC = () => {
             <LeadershipGrid>
               <ClickableLeaderCard ref={setElementRef(6)} onClick={openModal}>
                 <LeaderInfo style={{padding: '40px', textAlign: 'center'}}>
-                  <LeaderName>Course Creator</LeaderName>
+                  <LeaderName>Shannon W.</LeaderName>
                   <LeaderTitle>Web Design Expert & Educator</LeaderTitle>
                   <LeaderDescription>
                     Passionate about web design and dedicated to making design education accessible to everyone. 
@@ -2361,7 +2361,7 @@ const About: React.FC = () => {
                 <ValueIcon>🌱</ValueIcon>
                 <ValueTitle>Continuous Skill Development</ValueTitle>
                 <ValueDescription>
-                  Programming is an evolving field. We foster continuous learning 
+                  Design is an evolving field. We foster continuous learning 
                   and skill development for both students and instructors.
                 </ValueDescription>
               </ValueCard>
@@ -2370,8 +2370,8 @@ const About: React.FC = () => {
                 <ValueIcon>🌍</ValueIcon>
                 <ValueTitle>Real-World Applications</ValueTitle>
                 <ValueDescription>
-                  We focus on practical Python skills that you can apply immediately 
-                  in real projects, from web development to data science and automation.
+                  We focus on practical web design skills that you can apply immediately 
+                  in real projects, from responsive layouts to user experience design and modern interfaces.
                 </ValueDescription>
               </ValueCard>
             </ValuesGrid>
@@ -2379,11 +2379,11 @@ const About: React.FC = () => {
             <MissionStatement ref={setElementRef(34)}>
               <MissionTitle>Our Mission</MissionTitle>
               <MissionStatementText>
-                To empower the next generation of Python developers with world-class education, 
+                To empower the next generation of web designers with world-class education, 
                 practical skills, and real-world projects that drive career success. 
-                We believe that by making Python education accessible and excellent, we can help 
-                students build amazing applications while creating opportunities for everyone 
-                to participate in the programming revolution.
+                We believe that by making web design education accessible and excellent, we can help 
+                students build amazing digital experiences while creating opportunities for everyone 
+                to participate in the design revolution.
               </MissionStatementText>
             </MissionStatement>
           </ValuesContainer>
@@ -2396,7 +2396,7 @@ const About: React.FC = () => {
           <CloseButton onClick={closeModal}>×</CloseButton>
           
           <ModalHeader>
-            <ModalTitle>Course Creator</ModalTitle>
+            <ModalTitle>Shannon W.</ModalTitle>
             <ModalSubtitle>Professional Web Design Education</ModalSubtitle>
           </ModalHeader>
 
